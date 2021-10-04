@@ -1,0 +1,200 @@
+<html>
+    <head>
+        <title>User Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *
+{
+    margin: 0;
+    padding: 0;
+    font-family: courier New;
+}
+.hero
+{
+    height: 100%;
+    width: 100%;
+    background-image:radial-gradient( #fff ,#0099ff);
+    background-position: center;
+    background-size: cover;;
+    position: absolute;
+
+}
+.form-box
+{
+    width: 350px;
+    height: 500px;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+        border-radius: 30px;
+}
+.hero p img
+{
+    width: 100px;
+    height: 100px;
+    margin-left: 610px;
+    margin-top: 50px;
+    
+    
+}
+.button-box
+{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+.toggle-btn
+{
+    padding: 10px 22px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn
+{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background :linear-gradient(to right , #ff105f ,#ffad06);
+    border-radius: 30px;
+    transition: .5s;
+
+}
+.input-group
+{
+    position: absolute;
+    top: 100px;
+    width: 280px;
+    transition: .5s;
+}
+
+.input-field
+{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid black;
+    outline :none;
+    background: transparent;
+}
+.submit-btn
+{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right , #ff105f ,#ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.checkbox
+{
+    margin: 30px 10px 30px 0;
+}
+span
+{
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+#first
+{
+    left: 50px;
+
+}
+#second
+{
+    left: 450px;
+}
+
+            a
+            {
+                right: 0;
+                position: absolute;
+                margin-top: 45px;
+                text-decoration: none;
+                color: black;
+            }
+            a:hover
+            {
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hero">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="Login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="Register()">Register</button>
+                </div>
+                <form id="first" class="input-group"><br><br><br>
+                    <input type="text" class="input-field" name="" autocomplete="off" placeholder="Username" required>
+                    <input type="password" class="input-field" name="" autocomplete="off" placeholder="Password" id="myInput" required>
+                    <a href="Forgot_password_1.html">Forgot Password</a><br><br>
+                    <input type="checkbox" class="checkbox" autocomplete="off" name=""><span>Remember Password</span>
+                    <button type="submit" class="submit-btn">Log In</button>
+                </form>
+                <form id="second" class="input-group" action="http://localhost:8080/register/newjsp.jsp" method="post">
+                    <input type="text" class="input-field"  autocomplete="off" name="t1" placeholder="Name" required>
+                    <input type="email" class="input-field" autocomplete="off" name="e1" placeholder="E-mail" required>
+                    <input type="password" name="p1" autocomplete="off" class="input-field" placeholder="Password" required ><br><br>
+                    
+                    <input type="checkbox" class="checkbox" name=""><span>Agree Terms & Conditions</span>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            function myfunction()
+            {
+                var a = document.getElementById("myInput");
+                var b = document.getElementById("hide1");
+                var c = document.getElementById("hide2");
+
+                if (a.type === 'password')
+                {
+                    a.type = "text";
+                    b.style.display = "block";
+                    c.style.display = "none";
+                } else
+                {
+                    a.type = "password";
+                    b.style.display = "none";
+                    c.style.display = "block";
+                }
+            }
+            var x = document.getElementById("first");
+            var y = document.getElementById("second");
+            var z = document.getElementById("btn");
+
+            function Register()
+            {
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+            }
+            function Login()
+            {
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0px";
+            }
+        </script>
+    </body>
+</html>
